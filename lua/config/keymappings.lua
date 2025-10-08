@@ -73,7 +73,7 @@ vim.keymap.set({ "n", "v" }, "<leader>d", '"_d')
 vim.keymap.set("n", "Q", "<nop>")
 
 -- -- Open a new tmux window and run the tmux-sessionizer script
--- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- Format the current buffer using LSP
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
@@ -102,3 +102,7 @@ vim.keymap.set("n", "<leader>vpp", "<cmd>Lazy<CR>")
 vim.keymap.set("n", "<leader>aa", function()
 	vim.cmd("so")
 end)
+
+vim.keymap.set("n", "<leader>cc", function()
+	vim.cmd.normal({ "yyPgcc" })
+end, { desc = "Duplicate line and comment original" })
